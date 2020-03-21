@@ -28,12 +28,7 @@ app.use(cors());
 
 
 // root page
-app.get('/', (req, res) => {
-    db.select('id','name','email','entries','joined').from('users')
-    .then(response => {
-        res.json(response)
-    })
-})
+app.get('/', (req, res) => res.json('success!'))
 
 // signin part
 app.post('/signin', (req,res) => {handleSignin.handleSignin(req,res,db,bcrypt)} )
